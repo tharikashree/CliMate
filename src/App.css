@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .search-bar {
@@ -48,7 +49,7 @@
   margin: 20px;
   color: #fff;
   text-align: center;
-  width: 800px;
+  min-width: 380px;
 }
 
 /* Grid for weather details */
@@ -83,7 +84,7 @@
   color: #fff;
   transition: transform 0.3s ease, background 0.3s ease;
   cursor: pointer;
-  
+  box-sizing: border-box;
 }
 
 .weather-card:hover {
@@ -101,7 +102,7 @@
 }
 
 .weather-card p {
-  margin: 10px 0 0;
+  margin-left:  30px;
   font-size: 0.9rem;
 }
 
@@ -161,12 +162,7 @@ h2 {
   width: 60px;
 }
 
-.current-weather-card,.weather-accordion
-{
-  width: 715px;
-  margin: 20px;
 
-}
 /* Styling for Accordions */
 details {
   background: rgba(255, 255, 255, 0.1);
@@ -223,8 +219,8 @@ details p {
   align-items: flex-start;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
   background: rgba(255, 255, 255, 0.2);
   width: 100%;
   max-width: 700px;
@@ -258,6 +254,9 @@ details p {
   margin: 0;
   color: #fff;
 }
+.weather-accordion{
+  box-sizing: border-box;
+}
 
 .tip-description {
   color: #fff;
@@ -265,47 +264,170 @@ details p {
 }
 
 /* Tablet view (medium screens) */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .app {
     padding: 15px;
   }
 
   .header-el {
     font-size: 40px;
-    padding: 15px 30px;
+    padding: 15px 20px;
+    /* Adjusted padding */
   }
 
   .search-bar {
-    width: 60%;
+    width: 100%;
+    /* Full width for better fit */
+    font-size: 1rem;
+    /* Adjusted font size */
+    padding: 10px;
+    /* Adjusted padding */
+    box-sizing: border-box;
+    /* Ensures padding is included in width */
   }
-    .current-weather-card,
-    .weather-accordion {
-      width: 505px;
-    }
+
+  .search-button {
+    padding: 8px 12px;
+    /* Adjusted button padding */
+    font-size: 0.9rem;
+    /* Adjusted font size */
+    width: auto;
+    /* Allow button to resize naturally */
+    margin-left: 10px;
+    /* Space between input and button */
+  }
+
+  .current-weather-card,
+  .weather-accordion {
+    width: 100%;
+    /* Full width for better fit */
+    /* max-width: 500px; */
+    /* Set maximum width */
+    margin: 20px 0;
+    /* Vertical margin */
+  }
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+  }
+
   .tip-card {
-    width: 500px;
-    /* Two columns for medium screens */
+    width: 100%;
+    /* Full width for better fit */
+    padding: 10px;
+    /* Adjusted padding */
+    box-sizing: border-box;
+    /* Ensures padding is included in width */
+  }
+
+  .temp-el {
+    font-size: 2.5rem;
+    /* Adjusted temperature font size */
   }
 }
 
 /* Mobile view (small screens) */
-@media (max-width: 480px) {
+@media (max-width: 340px) {
   .header-el {
     font-size: 32px;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    /* Adjusted padding */
   }
-    .current-weather-card,.weather-accordion{
-      width: 415px;
-    }
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+  }
+  .current-weather-card,
+  .weather-accordion {
+    width: 80%;
+  
+  }
+
   .search-bar {
-    width: 90%;
+    width: 100%;
+    /* Full width for better fit */
+    font-size: 0.9rem;
+    /* Adjusted font size */
+    padding: 6px;
+    /* Adjusted padding */
+    box-sizing: border-box;
+    /* Ensures padding is included in width */
   }
+
+  .search-button {
+    padding: 6px 10px;
+    /* Adjusted button padding */
+    font-size: 0.8rem;
+    /* Adjusted font size */
+    width: auto;
+    /* Allow button to resize naturally */
+    margin-left: 10px;
+    /* Space between input and button */
+  }
+
   .tip-card {
-    width: 400px;
-    margin-bottom: 20px;
+    width: 100%;
+    /* Full width for better fit */
+    padding: 10px;
+    /* Adjusted padding */
+    box-sizing: border-box;
+    /* Ensures padding is included in width */
+  }
+
+  .temp-el {
+    font-size: 2rem;
+    /* Adjusted temperature font size */
+  }
+
+  .sun-card p {
+    font-size: 0.8rem;
+    /* Adjusted font size for sun times */
+  }
+
+  .tips-title {
+    font-size: 1.1em;
+    /* Adjusted title font size */
+  }
+
+  .tip-description {
+    font-size: 0.9rem;
+    /* Adjusted description font size */
+  }
+}
+/* Extra small mobile view (very small screens) */
+@media (max-width: 280px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+    /* One column */
+  }
+
+  .header-el {
+    font-size: 24px;
+    /* Adjust header font size */
+    padding: 10px;
+    /* Adjust padding */
+  }
+
+  .search-bar {
+    width: 95%;
+    /* Wider search bar */
+    font-size: 14px;
+    /* Smaller font size for input */
+  }
+
+  .current-weather-card,
+  .weather-accordion {
+    width: 100%;
+    /* Full width */
+  }
+
+  .tip-card {
+    min-width: 100%;
+    /* Full width */
   }
 
   .tips-container {
-    justify-content: center;
+    flex-direction: column;
+    /* Stack tips vertically */
   }
 }
