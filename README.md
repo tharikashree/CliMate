@@ -56,8 +56,8 @@ CliMate is an AI-driven weather website that provides real-time weather updates,
 - Get AI-powered activity suggestions based on weather conditions.
 
 ## Screenshots
-
-![Screenshot 2025-03-21 200411](https://github.com/user-attachments/assets/157c686f-2483-46c8-ac00-e0c87e150acf)
+![Screenshot 2025-03-21 200727](https://github.com/user-attachments/assets/9d151a5b-8a32-4ddb-96d9-3d2b94d724b5)
+![Screenshot 2025-03-21 200737](https://github.com/user-attachments/assets/ba8a8ff1-b8e5-48e6-b1df-958ec60d2978)
 
 ## Future Enhancements
 - 🌎 **Multi-language support** for global users.
